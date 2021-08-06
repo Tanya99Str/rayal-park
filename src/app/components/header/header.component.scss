@@ -23,6 +23,16 @@
       display: inline-block;
       padding: 0 10px;
       cursor: pointer;
+      @include text_style($font-roboto, #081F32, 1em);
+    }
+
+    li:hover {
+      color: #1b609a!important;
+    }
+
+    .active {
+      color: #1B75BB;
+      font-weight: 600;
     }
   }
 }

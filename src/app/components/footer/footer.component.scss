@@ -3,8 +3,11 @@
 @import "../../../scss/extend";
 
 .container {
-  @include block_style(100%, block, 7vh, 10%, 0);
+  @include block_style(100%, flex, 4vh, 10%, 0);
   background: #FCFCFD;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5vh;
 
   div:first-child {
     max-width: 20%;
@@ -12,6 +15,22 @@
     p {
       @include text_style($font-gelasio, #081F32, .9em);
       margin: 0;
+    }
+  }
+
+  .email {
+    @include text_style($font-gelasio, #081F32, .9em);
+  }
+
+  .social {
+    display: flex;
+
+    a {
+      margin-right: 1vw;
+    }
+
+    a:last-child {
+      margin-right: 0;
     }
   }
 

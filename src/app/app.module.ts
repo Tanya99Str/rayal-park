@@ -15,6 +15,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import {SearchFilterPipe} from './shared/pipes/search-filter.pipe';
+import { CommentsOneUserComponent } from './components/comments/comments-one-user/comments-one-user.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import {HomeCommentsOneUserComponent} from './components/home/home-comments-one-user/home-comments-one-user.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import {SearchFilterPipe} from './shared/pipes/search-filter.pipe';
     GalleryComponent,
     CommentsComponent,
     SearchFilterPipe,
+    CommentsOneUserComponent,
+    LoadingComponent,
+    HomeCommentsOneUserComponent
   ],
   imports: [
     CommonModule,

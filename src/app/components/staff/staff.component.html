@@ -1,7 +1,11 @@
 <div class="container">
+  <app-loading *ngIf="load"></app-loading>
   <div class="users">
     <div class="one-user" *ngFor="let one of staff">
-      <div class="photo"></div>
+      <div class="photo" [ngStyle]="{'background': color(one?.id)}">
+        <p *ngIf="(one)?.name">{{(one)?.name[0].toUpperCase()}}</p>
+        <p *ngIf="(one)?.username">{{(one)?.username[0].toUpperCase()}}</p>
+      </div>
       <div class="details">
         <h3>
           <span>{{one?.name}}</span>
@@ -16,9 +20,7 @@
         </p>
         <p>Company: <span>{{one?.company?.name}}</span></p>
       </div>
-      <button>Details</button>
-
+<!--      <button>Details</button>-->
     </div>
   </div>
-
 </div>

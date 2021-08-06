@@ -10,16 +10,20 @@ import {CommentModel} from '../../shared/service/models/comment.model';
 export class CommentsComponent implements OnInit {
 
   comments: CommentModel[];
+  load: boolean = false;
 
   constructor(private _commentsService: CommentsService) {
     this.init();
   }
 
   init() {
+    this.load = true;
     this._commentsService.findAllComments().subscribe(next => {
       this.comments = next;
+      this.load = false;
     }, error => {
       console.error(error);
+      this.load = false;
     });
   }
 

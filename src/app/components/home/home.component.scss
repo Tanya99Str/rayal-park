@@ -61,16 +61,95 @@
     position: relative;
 
     .details {
-      @include block_style(40%, block, 2.5vh, 1vw, 5px);
+      @include block_style(40%, flex, 2vh, 1vw, 5px);
+      align-items: center;
+      justify-content: space-between;
       background: rgba(226, 226, 226, 0.4);
       position: absolute;
       left: 0;
       bottom: 0;
+
+      .name {
+        @include text_style($font-roboto, #081F32, 1.1em);
+        font-weight: 600;
+      }
+
+      .price {
+        @include text_style($font-roboto, #081F32, 1.1em);
+        font-weight: 600;
+
+        span {
+          font-weight: normal;
+          font-size: .9em;
+        }
+      }
     }
   }
 
   .one-room:nth-child(2n) {
     margin: 0;
+  }
+
+  .comments-cont {
+    @include block_style(100%, inline-flex, 2vh, 0, 0);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    .comments {
+      @include block_style(100%, flex, 0, 3px, 0);
+      overflow: hidden;
+    }
+
+    .comments-list {
+      @include block_style(100%, flex, 0, 0, 0);
+      justify-content: flex-start;
+      align-items: stretch;
+      transition: .3s all;
+    }
+
+    .one-comment {
+      min-width: 32%;
+      @include block_style(32%, block, 2vh, 1vw, 5px);
+      border: 1px solid rgba(0, 0 ,0, .25);
+      transition: .3s all;
+      float: left;
+      margin-right: 2%;
+
+      p {
+        color: rgba(0, 0, 0, .4);
+      }
+
+
+      .user-photo {
+        width: 10vh;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        margin: auto;
+        border: 1px solid #1B75BB;
+        @extend %background-image;
+
+        p {
+          @include text_style($font-roboto, #ffffff, 1.4em);
+        }
+      }
+
+    }
+
+    .one-comment:nth-child(3n) {
+
+    }
+
+    .next, .prev {
+      border: none;
+      background: #ffffff;
+    }
+
+
+
   }
 
 
