@@ -1,0 +1,17 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+@import "../../../scss/extend";
+
+.container {
+  @include block_style(auto, flex, 7vh, 0, 0);
+  max-width: 90%;
+  margin: auto;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  img {
+    margin-top: 2vh;
+    margin-right: 1%;
+  }
+}

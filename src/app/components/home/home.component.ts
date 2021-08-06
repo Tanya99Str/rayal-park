@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RoomsService} from '../../shared/service/backend/rooms.service';
+import {RoomModel} from '../../shared/service/models/room.model';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  rooms: RoomModel[];
+
+  constructor(private _roomsService: RoomsService) {
+    this.init();
+  }
+
+  init() {
+    this._roomsService.getAllRooms().subscribe(next => {
+      this.rooms = next;
+    }, error => {
+      console.log(error);
+    });
+  }
 
   ngOnInit(): void {
   }

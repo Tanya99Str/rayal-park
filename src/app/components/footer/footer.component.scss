@@ -1,0 +1,18 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+@import "../../../scss/extend";
+
+.container {
+  @include block_style(100%, block, 7vh, 10%, 0);
+  background: #FCFCFD;
+
+  div:first-child {
+    max-width: 20%;
+
+    p {
+      @include text_style($font-gelasio, #081F32, .9em);
+      margin: 0;
+    }
+  }
+
+}

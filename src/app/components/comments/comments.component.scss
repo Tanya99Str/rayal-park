@@ -1,0 +1,11 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+@import "../../../scss/extend";
+
+.container {
+  @include block_style(100%, grid, 7vh, 10%, 0);
+  align-items: flex-start;
+  justify-content: space-between;
+
+
+}

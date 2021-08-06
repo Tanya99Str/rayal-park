@@ -1,0 +1,78 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+@import "../../../scss/extend";
+
+.container {
+  @include block_style(100%, block, 0, 10%, 0);
+
+  .choose-us {
+    @include block_style(100%, block, 5vh, 0, 0);
+    text-align: center;
+
+    p {
+      @include text_style($font-gelasio, #081F32, .9em);
+      padding: 0 20%;
+      line-height: 1.5;
+    }
+
+    .items {
+      @include block_style(100%, flex, 0, 0, 0);
+      align-items: stretch;
+      justify-content: space-between;
+      margin-top: 6vh;
+
+      .one-elem {
+        @include block_style(23%, flex, 2.5vh, 1vw, 5px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(0, 0 ,0, .25);
+
+        img {
+          height: 7vh;
+        }
+
+        h3 {
+          @extend %header_h3;
+        }
+
+        p {
+          @include text_style($font-gelasio, #081F32, .9em);
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .rooms {
+    @include block_style(100%, flex, 5vh, 0, 5px);
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .one-room {
+    @include block_style(49%, block, 5vh, 0, 5px);
+    margin-right: 2%;
+    @include background_image("../../../assets/images/Rectangle15.png");
+    @extend %background-image;
+    min-height: 40vh;
+    position: relative;
+
+    .details {
+      @include block_style(40%, block, 2.5vh, 1vw, 5px);
+      background: rgba(226, 226, 226, 0.4);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .one-room:nth-child(2n) {
+    margin: 0;
+  }
+
+
+
+}

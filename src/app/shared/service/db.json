@@ -1,0 +1,9 @@
+{
+  "rooms": [
+    {"id": 1, "name": "Lux Room", "price": "200", "description": "Comfortable room with private pool, garden"},
+    {"id": 2, "name": "Mini Room", "price": "200", "description": "Comfortable room with private pool"},
+    {"id": 3, "name": "Stande Room", "price": "70", "description": "Comfortable room"},
+    {"id": 4, "name": "Stande Room", "price": "60", "description": "Small room"},
+    {"id": 5, "name": "Elite Room", "price": "220", "description": "Comfortable 3-room apartment with  private pool, garden"}
+  ]
+}
