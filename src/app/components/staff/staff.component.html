@@ -1,0 +1,26 @@
+<div class="container">
+  <app-loading *ngIf="load"></app-loading>
+  <div class="users">
+    <div class="one-user" *ngFor="let one of staff">
+      <div class="photo" [ngStyle]="{'background': color(one?.id)}">
+        <p *ngIf="(one)?.name">{{(one)?.name[0].toUpperCase()}}</p>
+        <p *ngIf="(one)?.username">{{(one)?.username[0].toUpperCase()}}</p>
+      </div>
+      <div class="details">
+        <h3>
+          <span>{{one?.name}}</span>
+          <span>{{one?.username}}</span>
+        </h3>
+        <p>Phone: <span>{{one?.phone}}</span></p>
+        <p>Email: <span>{{one?.email}}</span></p>
+        <p>Address:
+          <span>{{one?.address?.city}}, </span>
+          <span>{{one?.address?.street}}, </span>
+          <span>{{one?.address?.suite}}</span>
+        </p>
+        <p>Company: <span>{{one?.company?.name}}</span></p>
+      </div>
+<!--      <button>Details</button>-->
+    </div>
+  </div>
+</div>

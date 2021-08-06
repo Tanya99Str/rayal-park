@@ -1,3 +1,84 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+@import "../../../scss/extend";
+
 .container {
-  width: 100%;
+  @include block_style(100%, block, 0vh, 10%, 0);
+  @include background_image("../../../assets/images/zOY7ROKMih 1.png");
+  @extend %background-image;
+  height: auto;
+  min-height: 75vh;
+}
+
+.route {
+  @include block_style(100%, flex, 0, 0, 0);
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      padding: 0 10px;
+      cursor: pointer;
+      @include text_style($font-roboto, #081F32, 1em);
+    }
+
+    li:hover {
+      color: #1b609a!important;
+    }
+
+    .active {
+      color: #1B75BB;
+      font-weight: 600;
+    }
+  }
+}
+
+.info {
+  @include block_style(35%, block, 0, 0, 0);
+  margin-top: 20vh!important;
+
+  h1 {
+    @include text_style($font-roboto, #081F32, 2.5em);
+
+    span {
+      color: #1B75BB!important;
+    }
+  }
+
+  p {
+    @include text_style($font-roboto, #081F32, 1em);
+    line-height: 1.7;
+    width: 80%;
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    @include block_style(100%, block, 0vh, 10%, 0);
+
+    .info {
+      width: 60%;
+      margin-top: 12vh !important;
+    }
+  }
+}
+
+
+@media (max-width: 400px) {
+  .container {
+    @include block_style(100%, block, 0vh, 5%, 0);
+
+    .route {
+      display: block;
+    }
+
+    .info {
+      width: 85%;
+      margin-top: 8vh !important;
+    }
+  }
 }

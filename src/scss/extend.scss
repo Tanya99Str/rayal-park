@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+
+%background-image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+%header_h2 {
+  @include text_style($font-gelasio, #081F32, 1.7em);
+}
+
+%header_h3 {
+  @include text_style($font-gelasio, #081F32, 1.4em);
+  font-weight: 500;
+  margin: 1.5vh 0;
+}
+
+%buttons {
+  background: $background-btn;
+  border: 1px solid $background-btn;
+  border-radius: 5px;
+  padding: $padding-btn;
+  @include text_style($font-roboto, #ffffff, .9em);
+  cursor: pointer;
+}

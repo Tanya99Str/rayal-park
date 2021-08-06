@@ -4,20 +4,21 @@ import {Observable, throwError} from 'rxjs';
 import {UserModel} from '../models/user.model';
 import {SERVER_API_URL} from '../../config/url';
 import {catchError} from 'rxjs/operators';
+import {GalleryModel} from '../models/gallery.model';
 
 @Injectable({providedIn: 'root'})
-export class UserService {
+export class GalleryService {
   constructor(private _httpClient: HttpClient) {
   }
 
-  findAllUsers(): Observable<UserModel[]> {
-    return this._httpClient.get<UserModel[]>(SERVER_API_URL + '/users')
+  findAllPhotos(): Observable<GalleryModel[]> {
+    return this._httpClient.get<GalleryModel[]>(SERVER_API_URL + '/photos')
       .pipe(catchError(err => throwError(err)));
 
   }
 
-  oneUser(userId: number): Observable<UserModel> {
-    return this._httpClient.get<UserModel>(SERVER_API_URL + '/users/' + userId)
+  onePhoto(id: number): Observable<GalleryModel> {
+    return this._httpClient.get<GalleryModel>(SERVER_API_URL + '/photos/' + id)
       .pipe(catchError(err => throwError(err)));
   }
 

@@ -1,0 +1,75 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+@import "../../../scss/extend";
+
+.container {
+  @include block_style(100%, block, 7vh, 10%, 0);
+
+  .users {
+    @include block_style(100%, flex, 0, 0, 0);
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .one-user {
+    @include block_style(49%, block, 2vh, 1vw, 10px);
+    margin-right: 2%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 2.7vh;
+
+    .photo {
+      width: 10vh;
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      margin: auto;
+      border: 1px solid #1B75BB;
+      @extend %background-image;
+
+      p {
+        @include text_style($font-roboto, #ffffff, 1.4em);
+      }
+    }
+
+    .details {
+      @include block_style(100%, block, 0, 0, 0);
+
+      h3 {
+        @extend %header_h3;
+        text-align: center;
+      }
+
+      p {
+        @include text_style($font-roboto, #081F32, 1em);
+        font-weight: 600;
+
+        span {
+          font-weight: normal;
+        }
+      }
+    }
+
+    button {
+      @extend %buttons;
+    }
+  }
+
+  .one-user:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  @media (max-width: 750px) {
+    .one-user {
+      @include block_style(100%, block, 2.5vh, 2vw, 10px);
+      margin-right: 0;
+    }
+
+
+  }
+
+}
+
+

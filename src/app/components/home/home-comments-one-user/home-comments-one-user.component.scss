@@ -1,0 +1,24 @@
+@import "../../../../scss/mixins";
+@import "../../../../scss/variables";
+@import "../../../../scss/extend";
+
+.photo {
+  width: 10vh;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin: auto;
+  border: 1px solid #1B75BB;
+  @extend %background-image;
+
+  p {
+    @include text_style($font-roboto, #ffffff, 1.4em);
+  }
+}
+
+h3 {
+  @extend %header_h3;
+  text-align: center!important;
+}

@@ -1,0 +1,24 @@
+@import "variables";
+
+@mixin text_style($fontFamily, $color, $size) {
+  font-family: $fontFamily;
+  color: $color;
+  font-size: $size;
+}
+
+@mixin block_style($width, $display, $padding_t_b, $padding_l_r, $radius) {
+  width: $width;
+  display: $display;
+  padding: $padding_t_b $padding_l_r;
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+}
+
+@mixin background_image($image) {
+  background-image: url($image);
+  -webkit-background-image: url($image);
+  -o-background-image: url($image);
+  -moz-background-image: url($image);
+}

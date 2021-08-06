@@ -1,0 +1,157 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+@import "../../../scss/extend";
+
+.container {
+  @include block_style(100%, block, 0, 10%, 0);
+
+  .choose-us {
+    @include block_style(100%, block, 5vh, 0, 0);
+    text-align: center;
+
+    p {
+      @include text_style($font-gelasio, #081F32, .9em);
+      padding: 0 20%;
+      line-height: 1.5;
+    }
+
+    .items {
+      @include block_style(100%, flex, 0, 0, 0);
+      align-items: stretch;
+      justify-content: space-between;
+      margin-top: 6vh;
+
+      .one-elem {
+        @include block_style(23%, flex, 2.5vh, 1vw, 5px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(0, 0 ,0, .25);
+
+        img {
+          height: 7vh;
+        }
+
+        h3 {
+          @extend %header_h3;
+        }
+
+        p {
+          @include text_style($font-gelasio, #081F32, .9em);
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .rooms {
+    @include block_style(100%, flex, 5vh, 0, 5px);
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .one-room {
+    @include block_style(49%, block, 5vh, 0, 5px);
+    margin-right: 2%;
+    @include background_image("../../../assets/images/Rectangle15.png");
+    @extend %background-image;
+    min-height: 40vh;
+    position: relative;
+
+    .details {
+      @include block_style(40%, flex, 2vh, 1vw, 5px);
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(226, 226, 226, 0.4);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      .name {
+        @include text_style($font-roboto, #081F32, 1.1em);
+        font-weight: 600;
+      }
+
+      .price {
+        @include text_style($font-roboto, #081F32, 1.1em);
+        font-weight: 600;
+
+        span {
+          font-weight: normal;
+          font-size: .9em;
+        }
+      }
+    }
+  }
+
+  .one-room:nth-child(2n) {
+    margin: 0;
+  }
+
+  .comments-cont {
+    @include block_style(100%, inline-flex, 2vh, 0, 0);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    .comments {
+      @include block_style(100%, flex, 0, 3px, 0);
+      overflow: hidden;
+    }
+
+    .comments-list {
+      @include block_style(100%, flex, 0, 0, 0);
+      justify-content: flex-start;
+      align-items: stretch;
+      transition: .3s all;
+    }
+
+    .one-comment {
+      min-width: 32%;
+      @include block_style(32%, block, 2vh, 1vw, 5px);
+      border: 1px solid rgba(0, 0 ,0, .25);
+      transition: .3s all;
+      float: left;
+      margin-right: 2%;
+
+      p {
+        color: rgba(0, 0, 0, .4);
+      }
+
+
+      .user-photo {
+        width: 10vh;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        margin: auto;
+        border: 1px solid #1B75BB;
+        @extend %background-image;
+
+        p {
+          @include text_style($font-roboto, #ffffff, 1.4em);
+        }
+      }
+
+    }
+
+    .one-comment:nth-child(3n) {
+
+    }
+
+    .next, .prev {
+      border: none;
+      background: #ffffff;
+    }
+
+
+
+  }
+
+
+
+}

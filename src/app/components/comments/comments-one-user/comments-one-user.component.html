@@ -1,0 +1,10 @@
+<div class="user">
+  <div class="photo" [ngStyle]="{'background': color(user?.id)}">
+    <p *ngIf="(user)?.name">{{(user)?.name[0].toUpperCase()}}</p>
+    <p *ngIf="(user)?.username">{{(user)?.username[0].toUpperCase()}}</p>
+  </div>
+  <p class="name">
+    <span *ngIf="user?.name">{{user?.name}}</span>
+    <span *ngIf="user?.username">{{user?.username}}</span>
+  </p>
+</div>

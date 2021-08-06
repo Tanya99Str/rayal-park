@@ -1,1 +1,69 @@
-<p>home works!</p>
+<div class="container">
+  <div class="choose-us">
+    <h2>Why you choose us!</h2>
+    <p>Naturally, it’s becoming even more important for hotel and hospitality brands to stand out from the crowd.
+      Content marketing remains a key way for hotels to do this.</p>
+    <div class="items">
+      <div class="one-elem">
+        <img src="../../../assets/images/booking.png" alt="booking">
+        <h3>Easy booking </h3>
+        <p>The booking process should include minimal steps.</p>
+      </div>
+      <div class="one-elem">
+        <img src="../../../assets/images/interface.png" alt="interface">
+        <h3>Friendly interface</h3>
+        <p>A hotel booking engine with a good user-friendly.</p>
+      </div>
+      <div class="one-elem">
+        <img src="../../../assets/images/responsibility.png" alt="responsibility">
+        <h3>Responsibility</h3>
+        <p>You should be able to add rooms to your system.</p>
+      </div>
+      <div class="one-elem">
+        <img src="../../../assets/images/order.png" alt="order">
+        <h3>Quick order supply</h3>
+        <p>The booking process should include minimal steps.</p>
+      </div>
+    </div>
+  </div>
+  <div class="rooms">
+    <div class="one-room">
+      <div class="details">
+        <p class="name">Mini Room</p>
+        <p class="price">$70 <span>night</span></p>
+      </div>
+    </div>
+    <div class="one-room">
+      <div class="details">
+        <p class="name">Stande Room</p>
+        <p class="price">$70 <span>night</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="comments-cont">
+    <button class="pointer prev" (click)="back()">
+      <svg width="11" height="15" viewBox="0 0 8 12" fill="none"
+           xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.6 12L8 10.6L3.4 6L8 1.4L6.6 -1.22392e-07L0.6 6L6.6 12Z"
+              fill="#d3d3d3"/>
+      </svg>
+    </button>
+    <div class="comments" *ngIf="comments">
+      <div class="comments-list" #mainSlider>
+        <div class="one-comment" *ngFor="let one of comments">
+          <app-home-comments-one-user [userId]="one.userId"></app-home-comments-one-user>
+          <p>
+            <i>{{one?.body}}</i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <button class="pointer next" (click)="next()">
+      <svg width="11" height="15" viewBox="0 0 8 12" fill="none"
+           xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M1.40012 0L0.00012207 1.4L4.60012 6L0.00012207 10.6L1.40012 12L7.40012 6L1.40012 0Z" fill="#d3d3d3"/>
+      </svg>
+    </button>
+  </div>
+</div>

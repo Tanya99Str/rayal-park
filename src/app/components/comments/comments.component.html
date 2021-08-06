@@ -1,0 +1,12 @@
+<div class="container">
+  <app-loading *ngIf="load"></app-loading>
+  <div class="one-post" *ngFor="let one of comments">
+    <div class="user-info">
+      <app-comments-one-user [userId]="one?.userId"></app-comments-one-user>
+    </div>
+    <div class="post-details">
+      <h1>{{one?.title}}</h1>
+      <p>{{one?.body}}</p>
+    </div>
+  </div>
+</div>
